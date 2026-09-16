@@ -84,10 +84,27 @@
     `;
 
     if (url) {
-      const vid = item.querySelector("video");
-      item.addEventListener("mouseenter", () => vid.play().catch(() => {}));
-      item.addEventListener("mouseleave", () => { vid.pause(); vid.currentTime = 0; });
-    }
+  const vid = item.querySelector("video");
+
+  // Preview ao passar o mouse — sem áudio
+  item.addEventListener("mouseenter", () => {
+    vid.muted = true;
+    vid.play().catch(() => {});
+  });
+
+  // Para e volta ao início ao tirar o mouse
+  item.addEventListener("mouseleave", () => {
+    vid.pause();
+    vid.currentTime = 0;
+    vid.muted = true;
+  });
+
+  // Clique — ativa o áudio
+  item.addEventListener("click", () => {
+    vid.muted = false;
+    vid.play().catch(() => {});
+  });
+}
 
     workGrid.appendChild(item);
   });
