@@ -52,9 +52,9 @@
      Leave "image" empty to show a plain placeholder badge.
      ========================================================= */
   const CERTIFICATES = [
-    { name: "Adobe Premiere Pro", issuer: "Adobe Certified", image: "", link: "" },
-    { name: "After Effects — VFX & Motion Graphics", issuer: "Adobe Certified", image: "", link: "" },
-    { name: "Certified Professional, Video Design", issuer: "Adobe Certified", image: "", link: "" }
+    { name: "Adobe Premiere Pro", issuer: "Adobe Certified", image: "", link: "https://www.credly.com/badges/a150279e-a67b-40f8-aeaf-4ad40b49e4cf/public_url" },
+    { name: "After Effects — VFX & Motion Graphics", issuer: "Adobe Certified", image: "", link: "https://www.credly.com/badges/8b7a6fed-3fe1-417a-8a18-676bf68f161e/public_url" },
+    { name: "Certified Professional, Video Design", issuer: "Adobe Certified", image: "", link: "https://www.credly.com/badges/8f72ac6d-48e2-47e4-b6be-f25ab492759d/public_url" }
   ];
 
   // ---- render selected work ----
