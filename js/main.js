@@ -4,8 +4,8 @@
      video URL. Leave empty to keep showing a placeholder.
      ========================================================= */
   const VIDEO_URLS = {
-    VIDEO_URL_1: "", // e.g. "https://res.cloudinary.com/amksgr5n/video/upload/v1789563912/Nick_Crease_0-1_video-converter.com.mp4"
-    VIDEO_URL_2: "",
+    VIDEO_URL_1: "https://res.cloudinary.com/amksgr5n/video/upload/v1789563912/Nick_Crease_0-1_video-converter.com.mp4",
+    VIDEO_URL_2: "https://res.cloudinary.com/amksgr5n/video/upload/v1789563256/Sam_0-1_video-converter.com.mp4",
     VIDEO_URL_3: "",
     VIDEO_URL_4: ""
   };
