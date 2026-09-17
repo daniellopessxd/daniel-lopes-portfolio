@@ -1,7 +1,5 @@
   /* =========================================================
      VIDEO CONFIG
-     Replace each empty string below with your Cloudinary
-     video URL. Leave empty to keep showing a placeholder.
      ========================================================= */
   const VIDEO_URLS = {
     VIDEO_URL_1: "https://res.cloudinary.com/amksgr5n/video/upload/v1789563912/Nick_Crease_0-1_video-converter.com.mp4",
@@ -12,53 +10,65 @@
 
   /* =========================================================
      PROJECT CONTENT
-     Edit title / description / tag freely. "size" controls
-     the mosaic layout: "wide" (full width) or "half" (2-up).
      ========================================================= */
   const PROJECTS = [
     {
       video: "VIDEO_URL_1",
-      title: "The Psychology of Procrastination",
-      desc: "A talking-head breakdown re-cut for short-form, with motion graphics visualizing each point as it's made.",
-      tag: "Psychology",
+      title: "Video 1",
+      desc: "",
+      tag: "",
       size: "wide"
     },
     {
       video: "VIDEO_URL_2",
-      title: "3 Money Habits That Keep You Broke",
-      desc: "Fast-paced financial education edit using pattern interrupts and on-screen typography to hold attention.",
-      tag: "Finance",
+      title: "Video 2",
+      desc: "",
+      tag: "",
       size: "half"
     },
     {
       video: "VIDEO_URL_3",
-      title: "How to Lead Without a Title",
-      desc: "Leadership talking-head content with B-roll layered in to illustrate real workplace scenarios.",
-      tag: "Leadership",
+      title: "Video 3",
+      desc: "",
+      tag: "",
       size: "half"
     },
     {
       video: "VIDEO_URL_4",
-      title: "Deep Work in a Distracted World",
-      desc: "A productivity short built around clean cuts and sound design to mirror the focus it's teaching.",
-      tag: "Productivity",
+      title: "Video 4",
+      desc: "",
+      tag: "",
       size: "wide"
     }
   ];
 
   /* =========================================================
      CERTIFICATION CONFIG
-     Add an image URL and/or a link for each certificate.
-     Leave "image" empty to show a plain placeholder badge.
      ========================================================= */
   const CERTIFICATES = [
-    { name: "Adobe Premiere Pro", issuer: "Adobe Certified", image: "adobe-certified-professional-in-digital-video-using.png", link: "https://www.credly.com/badges/a150279e-a67b-40f8-aeaf-4ad40b49e4cf/public_url" },
-    { name: "After Effects — VFX & Motion Graphics", issuer: "Adobe Certified", image: "adobe-certified-professional-in-visual-effects-and-.png", link: "https://www.credly.com/badges/8b7a6fed-3fe1-417a-8a18-676bf68f161e/public_url" },
-    { name: "Certified Professional, Video Design", issuer: "Adobe Certified", image: "adobe-certified-professional-in-video-design.png", link: "https://www.credly.com/badges/8f72ac6d-48e2-47e4-b6be-f25ab492759d/public_url" }
+    {
+      name: "Adobe Premiere Pro",
+      issuer: "Adobe Certified across Premiere Pro and After Effects",
+      image: "adobe-certified-professional-in-digital-video-using.png",
+      link: "https://www.credly.com/badges/a150279e-a67b-40f8-aeaf-4ad40b49e4cf/public_url"
+    },
+    {
+      name: "After Effects — VFX & Motion Graphics",
+      issuer: "Adobe Certified across Premiere Pro and After Effects",
+      image: "adobe-certified-professional-in-visual-effects-and-.png",
+      link: "https://www.credly.com/badges/8b7a6fed-3fe1-417a-8a18-676bf68f161e/public_url"
+    },
+    {
+      name: "Certified Professional, Video Design",
+      issuer: "Adobe Certified across Premiere Pro and After Effects",
+      image: "adobe-certified-professional-in-video-design.png",
+      link: "https://www.credly.com/badges/8f72ac6d-48e2-47e4-b6be-f25ab492759d/public_url"
+    }
   ];
 
   // ---- render selected work ----
   const workGrid = document.getElementById("workGrid");
+
   PROJECTS.forEach(p => {
     const url = VIDEO_URLS[p.video];
     const item = document.createElement("div");
@@ -66,55 +76,53 @@
 
     const mediaHTML = url
       ? `<video src="${url}" muted loop playsinline preload="metadata" poster=""></video>`
-      : `<div class="work-placeholder">
-           <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-           <span>Add your video</span>
-           <code>${p.video}</code>
-         </div>`;
+      : "";
 
     item.innerHTML = `
       <div class="work-media">${mediaHTML}</div>
       <div class="work-body">
-        <div>
-          <div class="work-title">${p.title}</div>
-          <p class="work-desc">${p.desc}</p>
-        </div>
-        <span class="work-tag">${p.tag}</span>
+        <div class="work-title">${p.title}</div>
       </div>
     `;
 
     if (url) {
-  const vid = item.querySelector("video");
+      const vid = item.querySelector("video");
 
-  // Preview ao passar o mouse — sem áudio
-  item.addEventListener("mouseenter", () => {
-    vid.muted = true;
-    vid.play().catch(() => {});
-  });
+      // Preview ao passar o mouse — sem áudio
+      item.addEventListener("mouseenter", () => {
+        vid.muted = true;
+        vid.play().catch(() => {});
+      });
 
-  // Para e volta ao início ao tirar o mouse
-  item.addEventListener("mouseleave", () => {
-    vid.pause();
-    vid.currentTime = 0;
-    vid.muted = true;
-  });
+      // Para e volta ao início ao tirar o mouse
+      item.addEventListener("mouseleave", () => {
+        vid.pause();
+        vid.currentTime = 0;
+        vid.muted = true;
+      });
 
-  // Clique — ativa o áudio
-  item.addEventListener("click", () => {
-    vid.muted = false;
-    vid.play().catch(() => {});
-  });
-}
+      // Clique — ativa o áudio
+      item.addEventListener("click", () => {
+        vid.muted = false;
+        vid.play().catch(() => {});
+      });
+    }
 
     workGrid.appendChild(item);
   });
 
   // ---- render certifications ----
   const certRow = document.getElementById("certRow");
+
   CERTIFICATES.forEach(c => {
     const el = document.createElement(c.link ? "a" : "div");
     el.className = "cert-badge";
-    if (c.link) { el.href = c.link; el.target = "_blank"; el.rel = "noopener"; }
+
+    if (c.link) {
+      el.href = c.link;
+      el.target = "_blank";
+      el.rel = "noopener";
+    }
 
     const iconHTML = c.image
       ? `<img src="${c.image}" alt="${c.name} badge">`
@@ -127,11 +135,13 @@
         <div class="cert-issuer">${c.issuer}</div>
       </div>
     `;
+
     certRow.appendChild(el);
   });
 
   // ---- nav scroll state ----
   const nav = document.getElementById("siteNav");
+
   window.addEventListener("scroll", () => {
     nav.classList.toggle("is-scrolled", window.scrollY > 12);
   }, { passive: true });
@@ -139,10 +149,12 @@
   // ---- mobile nav toggle ----
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
+
   navToggle.addEventListener("click", () => {
     const open = navLinks.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", open);
   });
+
   navLinks.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       navLinks.classList.remove("is-open");
@@ -152,6 +164,7 @@
 
   // ---- scroll reveal ----
   const revealEls = document.querySelectorAll(".reveal");
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -160,6 +173,7 @@
       }
     });
   }, { threshold: 0.15 });
+
   revealEls.forEach(el => io.observe(el));
 
   // ---- footer year ----
