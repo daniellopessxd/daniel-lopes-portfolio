@@ -329,7 +329,7 @@
     background: var(--surface-2);
     overflow: hidden;
   }
-  .work-item--wide .work-media{ aspect-ratio: 21 / 10; }
+  .work-item--wide .work-media{ aspect-ratio: 16 / 9; }
 
   .work-media video{
     width: 100%; height: 100%;
