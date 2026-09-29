@@ -410,6 +410,43 @@ button:focus-visible{
 
 }
 
+
+/* =========================================================
+   PORTFOLIO NOTE
+   ========================================================= */
+.portfolio-note{
+  margin-top: -36px;
+  margin-bottom: 48px;
+  padding: 20px 24px;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.portfolio-note strong{
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px){
+  .portfolio-note{
+    margin-top: -20px;
+    margin-bottom: 36px;
+    padding: 18px 20px;
+    font-size: 0.98rem;
+  }
+}
+
+
 .reveal{
   opacity: 0;
   transform: translateY(14px);
