@@ -2,10 +2,10 @@
    VIDEO CONFIG
    ========================================================= */
 const VIDEO_URLS = {
-  VIDEO_URL_1: "https://res.cloudinary.com/amksgr5n/video/upload/v1791218563/Serenity_Lockwood_0-1_video-converter.com.mp4",
+  VIDEO_URL_1: "https://res.cloudinary.com/amksgr5n/video/upload/v1791393675/Ashlee_Young_0-1_video-converter.com.mp4",
   VIDEO_URL_2: "https://res.cloudinary.com/amksgr5n/video/upload/v1789563256/Sam_0-1_video-converter.com.mp4",
-  VIDEO_URL_3: "https://res.cloudinary.com/amksgr5n/video/upload/v1789563912/Nick_Crease_0-1_video-converter.com.mp4",
-  VIDEO_URL_4: ""
+  VIDEO_URL_3: "https://res.cloudinary.com/amksgr5n/video/upload/v1791218563/Serenity_Lockwood_0-1_video-converter.com.mp4",
+  VIDEO_URL_4: "https://res.cloudinary.com/amksgr5n/video/upload/v1789563912/Nick_Crease_0-1_video-converter.com.mp4"
 };
 
 /* =========================================================
